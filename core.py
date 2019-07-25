@@ -1,10 +1,10 @@
-import bcrypt
-import time
 import platform
 import socket
-import ifaddr
+import time
 
-from flask import Flask, Response, request, jsonify
+import bcrypt
+import ifaddr
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 app.config['ENV'] = 'development'
