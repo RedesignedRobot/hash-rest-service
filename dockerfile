@@ -4,7 +4,7 @@ COPY . /app
 WORKDIR /app
 RUN apt-get update
 RUN apt-get install python3 -y
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 EXPOSE 80
 ENTRYPOINT [ "python3" ]
 CMD [ "core.py" ]
