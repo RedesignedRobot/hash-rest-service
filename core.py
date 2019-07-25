@@ -24,6 +24,7 @@ def get_hashed_password(text):
 def encode(s):
     return s.encode('utf-8')
 
+
 def get_ip_list():
     adapters = ifaddr.get_adapters()
     ip_list = []
@@ -34,6 +35,7 @@ def get_ip_list():
                 ip_list.append(x)
     return ip_list
 
+
 def build_response(plain_text, hashed_text):
     global rounds
     perf_monitor_stop()
@@ -43,10 +45,10 @@ def build_response(plain_text, hashed_text):
            "plain_text": plain_text,
            "exec_time": str("{0:.2f}".format(execution_time)),
            "rounds": str(rounds),
-           "platform":str(platform.platform()),
+           "platform": str(platform.platform()),
            "host_name": str(host_name),
            "host_ips": ', '.join(host_ips),
-           "endpoint": str("http://IP_ADDR/hash?text="+plain_text+"&&rounds="+str(rounds)),
+           "endpoint": str("http://IP_ADDR/hash?text=" + plain_text + "&&rounds=" + str(rounds)),
            })
     return js
 
